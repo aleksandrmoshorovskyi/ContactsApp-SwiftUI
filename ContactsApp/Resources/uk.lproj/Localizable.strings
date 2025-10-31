@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  ContactsApp
+
+  Created by Aleksandr Moroshovskyi on 30.10.2025.
+  
+*/
+
+"contacts_title" = "Контакти";
+"contacts_empty_message" = "Список контактів порожній";
+"add_contact_button" = "Додати контакт";

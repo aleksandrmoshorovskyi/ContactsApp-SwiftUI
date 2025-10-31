@@ -1,14 +1,14 @@
 //
-//  ContactsApp_SwiftUITests.swift
-//  ContactsApp-SwiftUITests
+//  ContactsAppTests.swift
+//  ContactsAppTests
 //
-//  Created by Aleksandr Moroshovskyi on 31.10.2025.
+//  Created by Aleksandr Moroshovskyi on 30.10.2025.
 //
 
 import XCTest
-@testable import ContactsApp_SwiftUI
+@testable import ContactsApp
 
-final class ContactsApp_SwiftUITests: XCTestCase {
+final class ContactsAppTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
