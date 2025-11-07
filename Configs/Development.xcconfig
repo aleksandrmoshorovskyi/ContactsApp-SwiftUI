@@ -1,0 +1,13 @@
+//
+//  Development.xcconfig
+//  ContactsApp
+//
+//  Created by Aleksandr Moroshovskyi on 07.11.2025.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+APP_NAME = ContactsDev
+ENVIRONMENT_NAME = Development
+BASE_URL = api.dev.example.com

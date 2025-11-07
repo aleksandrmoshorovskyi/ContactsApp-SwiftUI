@@ -1,0 +1,13 @@
+//
+//  Production.xcconfig
+//  ContactsApp
+//
+//  Created by Aleksandr Moroshovskyi on 07.11.2025.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+APP_NAME = ContactsApp
+ENVIRONMENT_NAME = Production
+BASE_URL = api.example.com
