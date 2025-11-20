@@ -11,6 +11,6 @@ struct Contact: Identifiable {
     let id = UUID()
     var firstName: String
     var lastName: String
-    var phone: String
+    var phoneNumber: String
     var email: String
 }

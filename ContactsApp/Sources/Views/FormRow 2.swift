@@ -32,31 +32,66 @@
 
 import SwiftUI
 
-struct FormRow2: View {
+struct FormRow3: View {
     let title: String
     let placeholder: String
     @Binding var text: String
 
     @FocusState private var isFocused: Bool
+    
+    static let titleWidth: CGFloat = 120
 
     var body: some View {
-        HStack {
-            Text(title)
-                .foregroundColor(isFocused ? .blue : .secondary)
-
-            Spacer()
-
-            TextField(placeholder, text: $text)
-                .multilineTextAlignment(.trailing)
-                .focused($isFocused)
-                .foregroundColor(.primary)
-        }
-        .padding(.vertical, 12)
-        .background(
-            VStack {
-                Spacer()
-                Divider()
+        VStack(spacing: 0) {
+            HStack(alignment: .center, spacing: 8) {
+                Text(title)
+                    .foregroundColor(isFocused ? .blue : .black)
+                    .font(.system(size: 14))
+                    .frame(width: FormRow2.titleWidth, alignment: .leading)
+                
+                TextField(placeholder, text: $text)
+                    .focused($isFocused)
+                    .foregroundColor(.primary)
+                    .multilineTextAlignment(.leading)
             }
-        )
+            .padding(.vertical, 8)
+            .padding(.horizontal, 0) // прибираємо пустий простір
+            
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(isFocused ? .blue : Color.gray.opacity(0.5))
+                .edgesIgnoringSafeArea(.horizontal)
+        }
+        .frame(maxWidth: .infinity) // займає всю ширину екрану
     }
 }
+
+
+//struct FormRow2: View {
+//    let title: String
+//    let placeholder: String
+//    @Binding var text: String
+//
+//    @FocusState private var isFocused: Bool
+//
+//    var body: some View {
+//        HStack {
+//            Text(title)
+//                .foregroundColor(isFocused ? .blue : .secondary)
+//
+//            Spacer()
+//
+//            TextField(placeholder, text: $text)
+//                .multilineTextAlignment(.trailing)
+//                .focused($isFocused)
+//                .foregroundColor(.primary)
+//        }
+//        .padding(.vertical, 12)
+//        .background(
+//            VStack {
+//                Spacer()
+//                Divider()
+//            }
+//        )
+//    }
+//}

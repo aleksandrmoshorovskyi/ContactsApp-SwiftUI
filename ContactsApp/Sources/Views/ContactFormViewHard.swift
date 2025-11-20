@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContactFormView: View {
+struct ContactFormViewHard: View {
 
     @Environment(\.dismiss) private var dismiss
     @StateObject var viewModel: ContactFormViewModel
@@ -29,39 +29,40 @@ struct ContactFormView: View {
                     // MARK: - Поля контакту
                     VStack(spacing: 0) {
                         FormRow2(
-                            title: L10n.firstName,
-                            placeholder: L10n.firstName,
+                            title: "First Name",
+                            placeholder: "First Name",
                             text: $viewModel.firstName
                         )
                         FormRow2(
-                            title: L10n.lastName,
-                            placeholder: L10n.lastName,
+                            title: "Last Name",
+                            placeholder: "Last Name",
                             text: $viewModel.lastName
                         )
                         FormRow2(
-                            title: L10n.phoneNumber,
-                            placeholder: L10n.phoneNumber,
+                            title: "Phone number",
+                            placeholder: "Phone number",
                             text: $viewModel.phoneNumber
                         )
                         FormRow2(
-                            title: L10n.email,
-                            placeholder: L10n.email,
+                            title: "Email",
+                            placeholder: "Email",
                             text: $viewModel.email
                         )
                     }
-                    .padding(.horizontal, Constants.Layout.padding)
-                    //.padding(.top, Constants.Layout.spacing)
+                    .padding(.horizontal)
+                    //.padding(.top, 20)
                 }
             }
             .navigationTitle(navTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(L10n.cancel) { dismiss() }
+                    Button("Cancel") { dismiss() }
                 }
 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(L10n.save) {
+                    Button("Save") {
+                        // handle save
                         dismiss()
                     }
                     .disabled(!viewModel.isSaveEnabled)
@@ -73,27 +74,32 @@ struct ContactFormView: View {
     // MARK: - Subviews
 
     private var profileIcon: some View {
-        VStack(spacing: Constants.Layout.spacing) {
+        VStack(spacing: 10) {
+            Spacer()
+            
             Image(systemName: Constants.Images.avatar)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 120, height: 120)
-                .foregroundColor(Constants.Colors.secondaryText)
+                .foregroundColor(.gray)
 
-            Text(L10n.addContactButton)
+            Text("Add Photo")
                 .font(.footnote)
-                .foregroundColor(Constants.Colors.accent)
+                .foregroundColor(.blue)
         }
         .frame(maxWidth: .infinity)
-        .padding(.vertical, Constants.Layout.spacing)
-        .padding(.top, Constants.Layout.spacing)
+        .padding(.vertical)
         .background(Constants.Colors.placeholder)
+    }
+
+    private func isActive(_ field: Field) -> Bool {
+        focusedField == field
     }
 
     private var navTitle: String {
         switch viewModel.mode {
         case .add:
-            return L10n.newContact
+            return "New Contact"
         case let .edit(contact):
             return "\(contact.firstName) \(contact.lastName)"
         }
