@@ -19,7 +19,7 @@ struct ContactsListView: View {
                     }
                 } else {
                     List(viewModel.contacts) { contact in
-                        Text(contact.name)
+                        Text(contact.firstName)
                             .foregroundColor(Constants.Colors.primaryText)
                     }
                     .listStyle(.insetGrouped)
