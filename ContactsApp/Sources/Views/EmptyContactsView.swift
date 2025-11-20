@@ -19,7 +19,6 @@ struct EmptyContactsView: View {
                 .scaledToFit()
                 .frame(width: 120, height: 120)
                 .foregroundStyle(Constants.Colors.placeholder)
-                .accessibilityHidden(true)
             
             Text(L10n.contactsEmptyMessage)
                 .font(.title3)
@@ -28,7 +27,6 @@ struct EmptyContactsView: View {
             Button(L10n.addContactButton, action: onAddContact)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .accessibilityIdentifier(Constants.Accessibility.addContactButton)
             
             Spacer()
         }

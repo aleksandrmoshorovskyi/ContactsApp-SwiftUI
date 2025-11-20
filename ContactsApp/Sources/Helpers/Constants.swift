@@ -28,11 +28,6 @@ enum Constants {
     // MARK: Images
     enum Images {
         static let emptyStateIcon = "person.2.fill"
-    }
-    
-    // MARK: Accessibility Identifiers
-    enum Accessibility {
-        static let addContactButton = "addContactButton"
-        static let contactList = "contactsList"
+        static let avatar = "person.circle.fill"
     }
 }

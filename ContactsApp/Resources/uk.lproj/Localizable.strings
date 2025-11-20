@@ -9,3 +9,10 @@
 "contacts_title" = "Контакти";
 "contacts_empty_message" = "Список контактів порожній";
 "add_contact_button" = "Додати контакт";
+"new_contact" = "Новий контакт";
+"first_name" = "Ім'я";
+"last_name" = "Прізвище";
+"phone_number" = "Телефон";
+"email" = "Email";
+"save" = "Зберегти";
+"cancel" = "Скасувати";

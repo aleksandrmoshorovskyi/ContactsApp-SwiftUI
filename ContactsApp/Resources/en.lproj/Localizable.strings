@@ -9,3 +9,10 @@
 "contacts_title" = "Contacts";
 "contacts_empty_message" = "The contact list is empty";
 "add_contact_button" = "Add Contact";
+"new_contact" = "New Contact";
+"first_name" = "First Name";
+"last_name" = "Last Name";
+"phone_number" = "Phone Number";
+"email" = "Email";
+"save" = "Save";
+"cancel" = "Cancel";
