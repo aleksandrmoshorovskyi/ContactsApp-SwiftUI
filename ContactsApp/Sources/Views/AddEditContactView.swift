@@ -5,6 +5,7 @@
 //  Created by Aleksandr Moroshovskyi on 20.11.2025.
 //
 
+/*
 import SwiftUI
 
 struct AddEditContactView: View {
@@ -40,3 +41,4 @@ struct AddEditContactView: View {
         }
     }
 }
+*/

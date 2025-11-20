@@ -10,22 +10,27 @@ import SwiftUI
 struct FormRow: View {
     let title: String
     @Binding var text: String
-    var keyboardType: UIKeyboardType = .default
-    
-    @State private var isFocused: Bool = false
+    @FocusState var isFocused: Bool
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(title)
-                .font(.caption)
-                .foregroundColor(isFocused ? Constants.Colors.accent : Constants.Colors.secondaryText)
-            
-            TextField(title, text: $text, onEditingChanged: { editing in
-                isFocused = editing
-            })
-            .keyboardType(keyboardType)
-            .textFieldStyle(.roundedBorder)
+        Grid(alignment: .leading, horizontalSpacing: 16, verticalSpacing: 12) {
+
+            GridRow {
+                Text(title)
+                    .foregroundColor(isFocused ? .blue : .gray)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                TextField(title, text: $text)
+                    .focused($isFocused)
+                    .foregroundColor(.primary)
+                    .multilineTextAlignment(.leading)
+            }
+
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(isFocused ? .blue : .gray.opacity(0.3))
+                .gridCellUnsizedAxes(.horizontal)
         }
-        .padding(.vertical, 4)
+        .padding(.horizontal, 16)
     }
 }
